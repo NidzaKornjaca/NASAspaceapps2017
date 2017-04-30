@@ -13,6 +13,6 @@ def plot_commmand():
 
 root = tk.Tk()
 
-b4 =tk.Button(root, text='Plot', command=plot_commmand())
-b4.tk.pack(side=tk.LEFT, padx=5, pady=5)
+b4 =tk.Button(root, text='Plot', command=plot_commmand)
+b4.pack(side=tk.LEFT, padx=5, pady=5)
 root.mainloop()
