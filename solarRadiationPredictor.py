@@ -74,7 +74,7 @@ for i in range(10, 30):
 	predictor_stats(x_pre, y, i, 0.5)
 
 plot_predictor(x_pre, y, 15, 0.5)
-predictor = create_predictor(x_pre, y, 15, 0.5)
+predictor, x_train, x_test, y_train, y_test = create_predictor(x_pre, y, 15, 0.5)
 curr_time = 1475315718
 
 data_set = DataFrame([curr_time, date_to_float(datetime.datetime.fromtimestamp(curr_time)),1.27, 1.25, 1.25]).T
@@ -82,7 +82,7 @@ data_point = data_set
 predictions = []
 time_list = []
 
-for x in range(1, 5000):
+for x in range(1, 288):
 	fdp_prediction = predictor.predict(data_point)
 	data_point_time = x*300+curr_time
 	date_obj = datetime.datetime.fromtimestamp(data_point_time)
@@ -91,5 +91,5 @@ for x in range(1, 5000):
 	predictions.append(fdp_prediction.tolist())
 	time_list.append(date_obj)
 
-plt.plot(time_list, predictions, 'ro')
+plt.plot(time_list, predictions)
 plt.show()
