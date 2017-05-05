@@ -93,7 +93,7 @@ if __name__ == '__main__':
     b3 = Button(root, text='Add Appliance',
                command=(lambda e=ents: addAppliance(e)))
     b3.pack(side=LEFT, padx=5, pady=5)
-    b4 = Button(root, text='What should i turn off', 
+    b4 = Button(root, text='What should I turn off', 
                command=(lambda e=ents: findLowestPriority_HighestConsumtipon(e)))
     b4.pack(side=LEFT, padx=5, pady=5)
     b5 = Button(root, text='Quit', command=root.quit)
